@@ -11,4 +11,5 @@ type CreateInputValue struct {
 
 type UpdateTransactionInput struct {
 	ReservationID string `json:"reservation_id"`
+	ID            string `json:"id"`
 }

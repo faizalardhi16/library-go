@@ -5,6 +5,7 @@ import "github.com/google/uuid"
 type Service interface {
 	CreateTransaction(input CreateTransactionInput) (Transaction, error)
 	GetTransaction() ([]Transaction, error)
+	UpdateTransaction(input UpdateTransactionInput) (Transaction, error)
 }
 
 type service struct {
@@ -38,4 +39,18 @@ func (s *service) GetTransaction() ([]Transaction, error) {
 	}
 
 	return trans, nil
+}
+
+func (s *service) UpdateTransaction(input UpdateTransactionInput) (Transaction, error) {
+	inputValue := Transaction{}
+
+	inputValue.ReservationID = input.ReservationID
+
+	updateTrans, err := s.repository.Update(inputValue)
+
+	if err != nil {
+		return updateTrans, err
+	}
+
+	return updateTrans, nil
 }
