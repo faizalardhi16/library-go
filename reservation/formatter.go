@@ -15,3 +15,15 @@ func ResponseReservationFormat(reservation Reservation) ResponseReservation {
 
 	return f
 }
+
+func ResponseReservationFormats(reservation []Reservation) []ResponseReservation {
+
+	var f []ResponseReservation
+
+	for _, r := range reservation {
+		j := ResponseReservationFormat(r)
+		f = append(f, j)
+	}
+
+	return f
+}

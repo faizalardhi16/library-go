@@ -46,7 +46,7 @@ func main() {
 	userHandler := handler.NewUserHandler(userService, authService)
 	bookHandler := handler.NewBookHandler(bookService)
 	transactionHandler := handler.NewTransactionHandler(transactionService)
-	reservationHandler := handler.NewReservationHandler(reservationService)
+	reservationHandler := handler.NewReservationHandler(reservationService, transactionService)
 
 	router := gin.Default()
 

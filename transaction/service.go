@@ -42,11 +42,16 @@ func (s *service) GetTransaction() ([]Transaction, error) {
 }
 
 func (s *service) UpdateTransaction(input UpdateTransactionInput) (Transaction, error) {
-	inputValue := Transaction{}
 
-	inputValue.ReservationID = input.ReservationID
+	findTrans, err := s.repository.FindTransactionByID(input.ID)
 
-	updateTrans, err := s.repository.Update(inputValue)
+	if err != nil {
+		return findTrans, err
+	}
+
+	findTrans.ReservationID = input.ReservationID
+
+	updateTrans, err := s.repository.Update(findTrans)
 
 	if err != nil {
 		return updateTrans, err
