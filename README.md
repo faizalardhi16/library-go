@@ -87,3 +87,5 @@ Contoh body nya
 }
 ```
 
+Untuk akses reservation sama dengan transaction. Harus menggunakan Token
+
