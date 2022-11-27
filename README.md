@@ -21,3 +21,32 @@ Setelah menjalankan semua langkah diatas, buka folder yang sudah di clone terseb
 ```
 go run main.go
 ```
+
+Terdapat beberapa endpoint yang bisa digunakan
+
+# USER
+
+Buat sebuah user baru, user bisa dibuat melalui Postman. Dimana, digunakan url http://localhost:5041/api/v1/register
+
+Dengan body seperti dibawah ini 
+
+```
+{
+    "email":"natalie@gmail.com",
+    "first_name":"Natalie",
+    "last_name": "Sasha",
+    "password": "123123"
+}
+```
+
+Setelah register, dapat dicoba untuk login ke akun yang sudah didaftarkan tersebut di http://localhost:5041/api/v1/session
+
+```
+{
+    "email":"natalie@gmail.com",
+    "password": "123123"
+}
+```
+
+Token yang didapatkan ketika register maupun login dapat digunakan untuk melakukan transaksi
+
