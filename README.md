@@ -5,7 +5,7 @@ Cara untuk menjalankan aplikasi
 Langkah pertama yang harus dilakukan adalah clone repository ini. 
 <blink>
 git clone https://github.com/faizalardhi16/library-go.git
-</blink
+</blink>
 
 1. Download dan Install GO pada url berikut : https://go.dev/doc/install
 2. Sesuaikan dengan OS yang digunakan untuk menjalankan GO
