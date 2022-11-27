@@ -69,4 +69,21 @@ Jangan lupa untuk menambahkan authorization Bearer Token di tab Headernya
 
 Token didapatkan ketika login / mendaftar!
 
+# RESERVATION
+
+Jika transaksi sudah dibuat, sekarang saatnya untuk menentukan tanggal booking dari buku yang akan kita book.
+
+Dapat dilakukan dengan mengakses url http://localhost:5041/api/v1/reservation
+
+Contoh body nya
+
+```
+{
+    "booking_date": "24-10-2022",
+    "transaction_id": [
+        "9d485762-2ba1-4690-aa64-ada68b677563",
+        "c55bd4f8-bd17-4370-8481-014d447cf725"
+    ]
+}
+```
 
