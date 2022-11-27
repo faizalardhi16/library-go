@@ -15,3 +15,9 @@ git clone https://github.com/faizalardhi16/library-go.git
 4. Sesuaikan dengan OS yang digunakan untuk running XAMPP
 5. Import database joybox.sql pada repository ini
 6. Run xampp
+
+Setelah menjalankan semua langkah diatas, buka folder yang sudah di clone tersebut dan jalankan command dibawah ini :
+
+```
+go run main.go
+```
