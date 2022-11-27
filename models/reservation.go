@@ -4,7 +4,6 @@ import "time"
 
 type Reservation struct {
 	ID          string `gorm:"size:36;not null;uniqueIndex;primary_key"`
-	BookID      string `gorm:"size:36;not null"`
 	UserID      string `gorm:"size:36;not null"`
 	BookingDate string `gorm:"size:100;not null"`
 	CreateAt    time.Time

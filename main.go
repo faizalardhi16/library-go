@@ -6,6 +6,8 @@ import (
 	"library/handler"
 	"library/helper"
 	"library/models"
+	"library/reservation"
+	"library/transaction"
 	"library/users"
 	"log"
 	"net/http"
@@ -30,15 +32,21 @@ func main() {
 	//repository
 	userRepository := users.NewUserRepository(db)
 	NewBookRepository := book.NewBookRepository(db)
+	transactionRepository := transaction.NewTransactionRepository(db)
+	reservationRepository := reservation.NewReservationRepository(db)
 
 	//service
 	userService := users.NewUserService(userRepository)
 	authService := auth.NewService()
 	bookService := book.NewBookService(NewBookRepository)
+	transactionService := transaction.NewTransactionService(transactionRepository)
+	reservationService := reservation.NewReservationService(reservationRepository)
 
 	//handler
 	userHandler := handler.NewUserHandler(userService, authService)
 	bookHandler := handler.NewBookHandler(bookService)
+	transactionHandler := handler.NewTransactionHandler(transactionService)
+	reservationHandler := handler.NewReservationHandler(reservationService)
 
 	router := gin.Default()
 
@@ -46,6 +54,7 @@ func main() {
 
 	//get request
 	api.GET("/books", bookHandler.FindBook)
+	api.GET("/transaction", transactionHandler.GetTransaction)
 
 	//post request
 	api.POST("/register", userHandler.RegisterUserHandler)
@@ -53,6 +62,8 @@ func main() {
 	api.POST("/session", userHandler.LoginUser)
 	api.POST("/books", bookHandler.CreateBook)
 	api.POST("/books/:id", bookHandler.UploadFile)
+	api.POST("/transaction", authMiddleware(authService, userService), transactionHandler.CreateTransaction)
+	api.POST("/reservation", authMiddleware(authService, userService), reservationHandler.CreateReservation)
 
 	//put request
 
