@@ -50,3 +50,23 @@ Setelah register, dapat dicoba untuk login ke akun yang sudah didaftarkan terseb
 
 Token yang didapatkan ketika register maupun login dapat digunakan untuk melakukan transaksi
 
+
+# TRANSACTION
+
+Untuk melakukan test pada API transaction, kita membutuhkan User yang terdaftar dan buku yang sudah diupload. Oleh karena itu, dengan import DB yang sudah disediakan akan mempercepat prosesnya.
+
+Untuk melakukan booking pada buku, dibuat terlebih dahulu transaksinya, dimana 1 transaksi berelasi dengan 1 id buku.
+
+Transaksi dapat dibuat dengan menggunakan url http://localhost:5041/api/v1/transaction
+
+```
+{
+    "book_id": "3f83675d-2111-4d5e-ab06-0c07a1cadc4b"
+}
+```
+
+Jangan lupa untuk menambahkan authorization Bearer Token di tab Headernya
+
+![Uploading image.png…]()
+
+
