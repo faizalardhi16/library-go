@@ -4,8 +4,11 @@ Cara untuk menjalankan aplikasi
 
 Langkah pertama yang harus dilakukan adalah clone repository ini. 
 
+```
+code blocks for commands
+```
 
-console.log("git clone https://github.com/faizalardhi16/library-go.git")
+"git clone https://github.com/faizalardhi16/library-go.git"
 
 
 1. Download dan Install GO pada url berikut : https://go.dev/doc/install
