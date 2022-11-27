@@ -67,6 +67,6 @@ Transaksi dapat dibuat dengan menggunakan url http://localhost:5041/api/v1/trans
 
 Jangan lupa untuk menambahkan authorization Bearer Token di tab Headernya
 
-![Uploading image.png…]()
+Token didapatkan ketika login / mendaftar!
 
 
